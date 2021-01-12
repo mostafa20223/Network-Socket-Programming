@@ -20,7 +20,7 @@
    <string>Records</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_9">
+   <layout class="QGridLayout" name="gridLayout_10">
     <item row="0" column="0">
      <widget class="QGroupBox" name="UserLogin">
       <property name="font">
@@ -137,9 +137,145 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <layout class="QGridLayout" name="gridLayout_8">
+     <layout class="QGridLayout" name="gridLayout_9">
       <item row="0" column="0">
-       <widget class="QTabWidget" name="tabWidget">
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="font">
+           <font>
+            <family>Courier New</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Triangular</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="movable">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="Records">
+           <attribute name="title">
+            <string>Patient Records</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_21">
+            <item row="0" column="0">
+             <widget class="QTableWidget" name="records_table">
+              <property name="font">
+               <font>
+                <family>Courier New</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="toolTipDuration">
+               <number>-1</number>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
+              <property name="midLineWidth">
+               <number>0</number>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustIgnored</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>false</bool>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderMinimumSectionSize">
+               <number>50</number>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>RBC (4 - 5.2)</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>WBC (4 - 11)</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Hgb (12 - 16)</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>PCV (36 - 46)</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Platelets (150 - 450)</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <layout class="QGridLayout" name="gridLayout_7"/>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <widget class="QTabWidget" name="tabWidget_2">
         <property name="font">
          <font>
           <family>Courier New</family>
@@ -155,232 +291,147 @@
         <property name="movable">
          <bool>false</bool>
         </property>
-        <widget class="QWidget" name="Records">
+        <widget class="QWidget" name="Feedback">
          <attribute name="title">
-          <string>Patient Records</string>
+          <string>Feedback</string>
          </attribute>
-         <layout class="QGridLayout" name="gridLayout_21">
-          <item row="0" column="0">
-           <widget class="QTableWidget" name="records_table">
+         <layout class="QGridLayout" name="gridLayout_22">
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="UserLogin_3">
             <property name="font">
              <font>
               <family>Courier New</family>
-              <pointsize>10</pointsize>
+              <pointsize>12</pointsize>
              </font>
             </property>
-            <property name="toolTip">
-             <string/>
+            <property name="title">
+             <string>Feedback Result</string>
             </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_6">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetNoConstraint</enum>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="result">
+                 <property name="font">
+                  <font>
+                   <family>Courier New</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <italic>true</italic>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="placeholderText">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="UserLogin_2">
+            <property name="font">
+             <font>
+              <family>Courier New</family>
+              <pointsize>12</pointsize>
+             </font>
             </property>
-            <property name="midLineWidth">
-             <number>0</number>
+            <property name="title">
+             <string>Request a Service</string>
             </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustIgnored</enum>
-            </property>
-            <property name="alternatingRowColors">
-             <bool>false</bool>
-            </property>
-            <attribute name="horizontalHeaderCascadingSectionResizes">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="horizontalHeaderMinimumSectionSize">
-             <number>50</number>
-            </attribute>
-            <column>
-             <property name="text">
-              <string>RBC (4 - 5.2)</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>WBC (4 - 11)</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Hgb (12 - 16)</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>PCV (36 - 46)</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Platelets (150 - 450)</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-              </font>
-             </property>
-            </column>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="1" column="0">
+              <widget class="QLabel" name="login_failed_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_2">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetNoConstraint</enum>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="feedback_btn">
+                 <property name="font">
+                  <font>
+                   <family>Courier New</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Feedback</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="record_enter">
+                 <property name="font">
+                  <font>
+                   <family>Courier New</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <italic>true</italic>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Enter one result only...</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="TestRsult">
+                 <property name="font">
+                  <font>
+                   <family>Courier New</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Test Result:</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
         </widget>
        </widget>
-      </item>
-      <item row="0" column="1">
-       <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="UserLogin_2">
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="title">
-           <string>Request a Service</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_4">
-           <item row="1" column="0">
-            <widget class="QLabel" name="login_failed_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <layout class="QGridLayout" name="gridLayout_2">
-             <property name="sizeConstraint">
-              <enum>QLayout::SetNoConstraint</enum>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="spacing">
-              <number>10</number>
-             </property>
-             <item row="1" column="1">
-              <widget class="QPushButton" name="feedback_btn">
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                 <pointsize>12</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Feedback</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="record_enter">
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                 <pointsize>12</pointsize>
-                 <weight>75</weight>
-                 <italic>true</italic>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="placeholderText">
-                <string>Enter one result only...</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="TestRsult">
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                 <pointsize>12</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Test Result:</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QGroupBox" name="UserLogin_3">
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="title">
-           <string>Feedback Result</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_5">
-           <item row="0" column="0">
-            <layout class="QGridLayout" name="gridLayout_6">
-             <property name="sizeConstraint">
-              <enum>QLayout::SetNoConstraint</enum>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="spacing">
-              <number>10</number>
-             </property>
-             <item row="0" column="0">
-              <widget class="QLineEdit" name="result">
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                 <pointsize>12</pointsize>
-                 <weight>75</weight>
-                 <italic>true</italic>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
       </item>
      </layout>
     </item>
