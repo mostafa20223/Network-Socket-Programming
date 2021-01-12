@@ -17,11 +17,126 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>CMMS</string>
+   <string>Doctors</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_14">
-    <item row="0" column="1">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="UserLogin">
+      <property name="font">
+       <font>
+        <family>Courier New</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Doctor Login</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="UserName">
+           <property name="font">
+            <font>
+             <family>Courier New</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Doctor Name:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="UserPassword">
+           <property name="font">
+            <font>
+             <family>Courier New</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Doctor Password:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="user_enter">
+           <property name="font">
+            <font>
+             <family>Courier New</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="placeholderText">
+            <string>Enter your name</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="login_btn">
+           <property name="font">
+            <font>
+             <family>Courier New</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Login</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="pass_enter">
+           <property name="font">
+            <font>
+             <family>Courier New</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+           <property name="placeholderText">
+            <string>Enter your password</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="login_failed">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
        <font>
@@ -42,272 +157,63 @@
        <attribute name="title">
         <string>Doctor Details</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_15">
-        <item row="0" column="0" rowspan="2">
-         <widget class="QGroupBox" name="AddUser">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="doctor_table">
           <property name="font">
            <font>
             <family>Courier New</family>
             <pointsize>10</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
            </font>
           </property>
-          <property name="title">
-           <string>Add New User</string>
+          <property name="midLineWidth">
+           <number>0</number>
           </property>
-          <layout class="QGridLayout" name="gridLayout">
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="readd_pass">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Password</enum>
-             </property>
-             <property name="placeholderText">
-              <string>Re-enter password</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
-            <widget class="QPushButton" name="add_user_btn">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Add User</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="add_email">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="placeholderText">
-              <string>Enter email</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="add_user">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="placeholderText">
-              <string>Enter username</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="password">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Passward:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="add_pass">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Password</enum>
-             </property>
-             <property name="placeholderText">
-              <string>Enter password</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="Repassword">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Confirm password:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="add_failed">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="user_name">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>UserName:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="email">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>E-mail:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustIgnored</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Username</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Password</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Email</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QGroupBox" name="AccessInfo">
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="title">
-           <string>Access User Information</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_2">
-           <item row="1" column="0">
-            <widget class="QLabel" name="password0">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Passward:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="access_pass">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Password</enum>
-             </property>
-             <property name="placeholderText">
-              <string>Enter your password</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="user_name0">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>UserName:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="access_user">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="placeholderText">
-              <string>Enter your username</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QPushButton" name="user_login_btn">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Login</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="1">
          <widget class="QGroupBox" name="EditUser">
           <property name="enabled">
            <bool>false</bool>
@@ -324,26 +230,10 @@
           <property name="title">
            <string>Edit your data</string>
           </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QLabel" name="user_name1">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="acceptDrops">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>UserName:</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="0">
             <widget class="QLabel" name="password1">
              <property name="font">
@@ -374,6 +264,22 @@
              </property>
             </widget>
            </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="edit_user_btn">
+             <property name="font">
+              <font>
+               <family>Courier New</family>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Edit User Data</string>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="email1">
              <property name="font">
@@ -387,20 +293,6 @@
              </property>
              <property name="text">
               <string>E-mail:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="edit_email">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="placeholderText">
-              <string>Enter new email</string>
              </property>
             </widget>
            </item>
@@ -421,22 +313,6 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
-            <widget class="QPushButton" name="edit_user_btn">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Edit User Data</string>
-             </property>
-            </widget>
-           </item>
            <item row="3" column="1">
             <widget class="QLineEdit" name="reedit_pass">
              <property name="font">
@@ -451,6 +327,20 @@
              </property>
              <property name="placeholderText">
               <string>Re-enter new password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="edit_email">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <italic>true</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="placeholderText">
+              <string>Enter new email</string>
              </property>
             </widget>
            </item>
@@ -470,6 +360,25 @@
              </property>
             </widget>
            </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="user_name1">
+             <property name="font">
+              <font>
+               <family>Courier New</family>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="acceptDrops">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>UserName:</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -477,11 +386,11 @@
       </widget>
       <widget class="QWidget" name="Patients">
        <attribute name="title">
-        <string>Patients' Records</string>
+        <string>Patients</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_21">
         <item row="0" column="0">
-         <widget class="QTableWidget" name="cmms_table">
+         <widget class="QTableWidget" name="patient_table">
           <property name="font">
            <font>
             <family>Courier New</family>
@@ -499,91 +408,147 @@
           </property>
           <column>
            <property name="text">
-            <string>Serial Number</string>
+            <string>ID</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Equip Name</string>
+            <string>Name</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Equip Code</string>
+            <string>Email</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Portable</string>
+            <string>Password</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Records">
+       <attribute name="title">
+        <string>Records</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="record_table">
+          <property name="font">
+           <font>
+            <family>Courier New</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="midLineWidth">
+           <number>0</number>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustIgnored</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>RBC</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Work Time</string>
+            <string>WBC</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Insurance</string>
+            <string>Hgb</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Maintenance</string>
+            <string>PCV</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Price</string>
+            <string>Platelets</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Category Name</string>
+            <string>Patient ID</string>
            </property>
            <property name="font">
             <font>
-             <family>Courier New</family>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
@@ -745,346 +710,11 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_11">
-           <attribute name="title">
-            <string>Repair</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_36">
-            <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_30">
-              <item row="0" column="0">
-               <widget class="QLabel" name="Catergories1">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Categories:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QComboBox" name="category_combo1">
-                <item>
-                 <property name="text">
-                  <string>Select Category</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_29">
-              <item row="0" column="0">
-               <widget class="QTableWidget" name="repair_table">
-                <property name="font">
-                 <font>
-                  <family>Courier New</family>
-                  <pointsize>10</pointsize>
-                  <weight>50</weight>
-                  <italic>false</italic>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <column>
-                 <property name="text">
-                  <string>Serial Number</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Equipment Name</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Equipment Code</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Category Name</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Error</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Fixed/Not</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Technician Name</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Repair Time</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Repair Type</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Cost</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QPushButton" name="repair_save_btn">
-                <property name="text">
-                 <string>Save</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_12">
-           <attribute name="title">
-            <string>Installation</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_35">
-            <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_32">
-              <item row="0" column="0">
-               <widget class="QLabel" name="Catergories2">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Categories:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QComboBox" name="category_combo2">
-                <item>
-                 <property name="text">
-                  <string>Select Category</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_31">
-              <item row="1" column="0">
-               <widget class="QPushButton" name="inst_save_btn">
-                <property name="text">
-                 <string>Save</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QTableWidget" name="inst_table">
-                <property name="font">
-                 <font>
-                  <family>Courier New</family>
-                 </font>
-                </property>
-                <property name="sizeAdjustPolicy">
-                 <enum>QAbstractScrollArea::AdjustIgnored</enum>
-                </property>
-                <column>
-                 <property name="text">
-                  <string>Serial Number</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Equipment Name</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Equipment Code</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Category Name</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Technician Name</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Installaion Time</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Equipment Model</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Courier New</family>
-                  </font>
-                 </property>
-                </column>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
          </widget>
         </item>
        </layout>
       </widget>
      </widget>
-    </item>
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="0">
-       <widget class="QPushButton" name="info_tab">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Courier New</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="patient_tab">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Courier New</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
     </item>
    </layout>
   </widget>
