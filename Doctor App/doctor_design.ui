@@ -155,11 +155,17 @@
       </property>
       <widget class="QWidget" name="User">
        <attribute name="title">
-        <string>Doctor Details</string>
+        <string>Full Information</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
+        <item row="0" column="0" colspan="2">
          <widget class="QTableWidget" name="doctor_table">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <family>Courier New</family>
@@ -213,183 +219,7 @@
           </column>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="EditUser">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="title">
-           <string>Edit your data</string>
-          </property>
-          <property name="flat">
-           <bool>false</bool>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="2" column="0">
-            <widget class="QLabel" name="password1">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Passward:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="edit_user">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="placeholderText">
-              <string>Enter new username</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
-            <widget class="QPushButton" name="edit_user_btn">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Edit User Data</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="email1">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>E-mail:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="edit_pass">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Password</enum>
-             </property>
-             <property name="placeholderText">
-              <string>Enter new password</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="reedit_pass">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Password</enum>
-             </property>
-             <property name="placeholderText">
-              <string>Re-enter new password</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="edit_email">
-             <property name="font">
-              <font>
-               <weight>75</weight>
-               <italic>true</italic>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="placeholderText">
-              <string>Enter new email</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="Repassword1">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Confirm password:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="user_name1">
-             <property name="font">
-              <font>
-               <family>Courier New</family>
-               <pointsize>10</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="acceptDrops">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>UserName:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="Patients">
-       <attribute name="title">
-        <string>Patients</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_21">
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QTableWidget" name="patient_table">
           <property name="font">
            <font>
@@ -456,14 +286,7 @@
           </column>
          </widget>
         </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="Records">
-       <attribute name="title">
-        <string>Records</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0">
+        <item row="1" column="1">
          <widget class="QTableWidget" name="record_table">
           <property name="font">
            <font>
@@ -518,7 +341,7 @@
           </column>
           <column>
            <property name="text">
-            <string>PCV</string>
+            <string>Hematocrit</string>
            </property>
            <property name="font">
             <font>
@@ -556,160 +379,418 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="Reports">
+      <widget class="QWidget" name="Patients">
        <attribute name="title">
-        <string>Reports</string>
+        <string>Patients</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_28">
-        <item row="0" column="0">
-         <widget class="QTabWidget" name="tabWidget_4">
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0" rowspan="2">
+         <widget class="QTableWidget" name="patient_table_2">
           <property name="font">
            <font>
             <family>Courier New</family>
             <pointsize>10</pointsize>
            </font>
           </property>
-          <property name="tabShape">
-           <enum>QTabWidget::Triangular</enum>
-          </property>
-          <property name="currentIndex">
+          <property name="midLineWidth">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab_10">
-           <attribute name="title">
-            <string>PPM</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_27">
-            <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_26">
-              <item row="1" column="0">
-               <widget class="QComboBox" name="category_combo0">
-                <item>
-                 <property name="text">
-                  <string>Select Category</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="Catergories0">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Categories:</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <widget class="QTableWidget" name="ppm_table">
-              <property name="font">
-               <font>
-                <family>Courier New</family>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <italic>false</italic>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="sizeAdjustPolicy">
-               <enum>QAbstractScrollArea::AdjustIgnored</enum>
-              </property>
-              <column>
-               <property name="text">
-                <string>Serial Number</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Equipment Name</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Equipment Code</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Category Name</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Technician Name</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>PPM Time</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Number of PPM/Year</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Error</string>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Courier New</family>
-                </font>
-               </property>
-              </column>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="ppm_save_btn">
-              <property name="text">
-               <string>Save</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustIgnored</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Email</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Password</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Add New Patient</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="p_id">
+             <property name="placeholderText">
+              <string>Enter patient id</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Patient Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="p_name">
+             <property name="placeholderText">
+              <string>Enter patient name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Patient Email:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="p_mail">
+             <property name="placeholderText">
+              <string>Enter patient email</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Patient Password:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="p_pass">
+             <property name="placeholderText">
+              <string>Enter patient password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="add_patient">
+             <property name="text">
+              <string>Add Patient</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Edit Patient</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="p_id_2">
+             <property name="placeholderText">
+              <string>Enter new patient id</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Patient Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="p_name_2">
+             <property name="placeholderText">
+              <string>Enter new patient name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Patient Email:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="p_mail_2">
+             <property name="placeholderText">
+              <string>Enter new patient email</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Patient Password:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="p_pass_2">
+             <property name="placeholderText">
+              <string>Enter new patient password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="edit_patient">
+             <property name="text">
+              <string>Edit Patient</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Records">
+       <attribute name="title">
+        <string>Records</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="record_table_2">
+          <property name="font">
+           <font>
+            <family>Courier New</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="midLineWidth">
+           <number>0</number>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustIgnored</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>RBC</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>WBC</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Hgb</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Hematocrit</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Platelets</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Patient ID</string>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Add New Record</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>RBC:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="RBC">
+             <property name="placeholderText">
+              <string>Enter patient RBC result</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>WBC:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="WBC">
+             <property name="placeholderText">
+              <string>Enter patient WBC result</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>Hgb:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="Hgb">
+             <property name="placeholderText">
+              <string>Enter patient Hgb result</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>Hematocrit:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="Hematocrit">
+             <property name="placeholderText">
+              <string>Enter patient Hematocrit result</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>Platelets:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="Platelets">
+             <property name="placeholderText">
+              <string>Enter patient Platelets result</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>Patient ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="pr_id">
+             <property name="placeholderText">
+              <string>Enter patient ID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QPushButton" name="add_record">
+             <property name="text">
+              <string>Add Record</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>

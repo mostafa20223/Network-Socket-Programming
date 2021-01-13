@@ -21,7 +21,6 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.tabWidget.setVisible(False)
         self.ui.login_btn.clicked.connect(self.Handel_login)
-        self.ui.edit_user_btn.clicked.connect(self.Edit_doctor_info)
 
     def Handel_login(self):
         username = self.ui.user_enter.text()
@@ -36,7 +35,6 @@ class ApplicationWindow(QtWidgets.QMainWindow):
                 self.ui.user_enter.setText('')
                 self.ui.pass_enter.setText('')
                 ID = data[i][0]
-                self.ui.EditUser.setEnabled(True)
                 self.Show_doctor_info(ID)
                 self.Show_patient_info()
                 self.Show_record_info()
@@ -70,23 +68,6 @@ class ApplicationWindow(QtWidgets.QMainWindow):
                 row_position = self.ui.record_table.rowCount()
                 self.ui.record_table.insertRow(row_position)
 
-    def Edit_doctor_info(self, ID):
-        username = self.ui.edit_user.text()
-        email = self.ui.edit_email.text()
-        password = self.ui.edit_pass.text()
-        password2 = self.ui.reedit_pass.text()
-        # original_name = self.ui.access_user.text()
-        if password == password2:
-            cur.execute(''' UPDATE doctor SET id = %s, username = %s, password = %s, email = %s WHERE id = %s '''
-                            % (ID, username, email, password, ID))
-            # db.commit()
-            self.statusBar().showMessage('User data updated successfully, please login again')
-            self.ui.edit_user.setText('')
-            self.ui.edit_email.setText('')
-            self.ui.edit_pass.setText('')
-            self.ui.reedit_pass.setText('')
-        else:
-            self.statusBar().showMessage('Make sure you entered your password correctly')
     def Show_doctor_info(self, ID):
         cur.execute(''' SELECT username, password, email From doctor WHERE id = %s '''
                             % (ID))
