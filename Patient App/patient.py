@@ -148,29 +148,29 @@ class ApplicationWindow(QtWidgets.QMainWindow):
             self.ui.treatment.setText('Just keep your healthy life :)')
         # RBC
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'Low RBC value!':
-            self.ui.treatment.setText('3aa')
+            self.ui.treatment.setText('You have Low RBC. So, Try to eat enough (folic acid), consumem more (Vitamin A), eat more Iron-Rich foods and the last thing is exercise Daily!')
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'High RBC value!':
-            self.ui.treatment.setText('3a')
+            self.ui.treatment.setText('You have High RBC. So, Try phlebotomy or take medication for blood clot prevention!')
         # WBC
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'Low WBC value!':
-            self.ui.treatment.setText('You have Low WBC')
+            self.ui.treatment.setText('You have Low WBC. So, Avoid situations that expose you to infectious and contagious diseases and immunocompromised diet, try healthy food!')
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'High WBC value!':
-            self.ui.treatment.setText('You have High WBC')
+            self.ui.treatment.setText('You have High WBC. So, Take antibiotics.')
         # Hgb
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'Low Hgb value!':
-            self.ui.treatment.setText('You have Low Hgb')
+            self.ui.treatment.setText('You have Low Hgb. So, Increasing iron intake will be a good choice for you!')
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'High Hgb value!':
-            self.ui.treatment.setText('You have High Hgb')
+            self.ui.treatment.setText('You have High Hgb. So, Seek a doctor immediately!')
         # Hematocrit
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'Low Hematocrit value!':
-            self.ui.treatment.setText('You have Low Hematocrit')
+            self.ui.treatment.setText('You have Low Hematocrit. So, You may require intravenous iron, transfusions or medications to stimulate the production of red cells by the bone narrow!')
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'High Hematocrit value!':
-            self.ui.treatment.setText('You have High Hematocrit')
+            self.ui.treatment.setText('You have High Hematocrit. So, You may require blood letting!')
         # Platelets
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'Low Platelets value!':
-            self.ui.treatment.setText('You have Low Platelets')
+            self.ui.treatment.setText('You have Low Platelets. So, Try platelet transfusions!')
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'High Platelets value!':
-            self.ui.treatment.setText('You have High Platelets')
+            self.ui.treatment.setText('You have High Platelets. So, Try taking aspirin!')
 
 # Main Application to be run
 def main():

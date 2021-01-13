@@ -24,41 +24,58 @@ while True:
         # RBC
         if test == 'RBC':
             if value >= 4.0 and value <= 5.2:
-                print("RBC >= 4.0 and RBC <= 5.2")
+                print("RBC >= 4.0 and RBC <= 5.2 and server replies with (You are in the normal range!)")
                 con.send(bytes("You are in the normal range!", "UTF-8"))
                 con.close()
             if value < 4.0:
-                print("RBC < 4.0")
-                con.send(bytes("Low RBC value!", "UTF-8"))
-                con.close()
+                print("RBC < 4.0 and server will check the value")
+                if value <= 0.0:
+                    print("RBC value is zero or below and is not correct! So, server replies with (RBC value is not correct! please re-enter it)")
+                    con.send(bytes("RBC value is not correct! please re-enter it", "UTF-8"))
+                    con.close()
+                else:
+                    print("RBC value is neither zero nor below but still below 4.0. So, server replies with (Low RBC value!)")
+                    con.send(bytes("Low RBC value!", "UTF-8"))
+                    con.close()
             if value > 5.2:
-                print("RBC > 5.2")
+                print("RBC > 5.2 and server replies with (High RBC value!)")
                 con.send(bytes("High RBC value!", "UTF-8"))
                 con.close()
         # WBC
         if test == 'WBC':
             if value >= 4.0 and value <= 11.0:
-                print("WBC >= 4.0 and WBC <= 11.0")
+                print("WBC >= 4.0 and WBC <= 11.0 and server replies with (You are in the normal range!)")
                 con.send(bytes("You are in the normal range!", "UTF-8"))
                 con.close()
             if value < 4.0:
-                print("WBC < 4.0")
-                con.send(bytes("Low WBC value!", "UTF-8"))
-                con.close()
+                print("WBC < 4.0 and server will check the value")
+                if value <= 0.0:
+                    print("WBC value is zero or below and is not correct! So, server replies with (WBC value is not correct! please re-enter it)")
+                    con.send(bytes("WBC value is not correct! please re-enter it", "UTF-8"))
+                    con.close()
+                else:
+                    print("WBC value is neither zero nor below but still below 4.0. So, server replies with (Low WBC value!)")
+                    con.send(bytes("Low WBC value!", "UTF-8"))
+                    con.close()
             if value > 11.0:
-                print("WBC > 11.0")
+                print("WBC > 11.0 and server replies with (High WBC value!)")
                 con.send(bytes("High WBC value!", "UTF-8"))
                 con.close()
         # Hgb
         if test == 'Hgb':
             if value >= 12.0 and value <= 16.0:
-                print("Hgb >= 12.0 and Hgb <= 16.0")
+                print("Hgb >= 12.0 and Hgb <= 16.0 and server replies with (You are in the normal range!)")
                 con.send(bytes("You are in the normal range!", "UTF-8"))
                 con.close()
             if value < 12.0:
-                print("Hgb < 12.0")
-                con.send(bytes("Low Hgb value!", "UTF-8"))
-                con.close()
+                print("Hgb < 12.0 and server will check the value")
+                if value <= 0.0:
+                    print("Hgb value is not correct!")
+                    con.send(bytes("Hgb value is not correct! please re-enter it", "UTF-8"))
+                    con.close()
+                else:
+                    con.send(bytes("Low Hgb value!", "UTF-8"))
+                    con.close()
             if value > 16.0:
                 print("Hgb > 16.0")
                 con.send(bytes("High Hgb value!", "UTF-8"))
@@ -66,13 +83,18 @@ while True:
         # Hematocrit
         if test == 'Hematocrit':
             if value >= 38.8 and value <= 50.0:
-                print("Hematocrit >= 38.8 and Hematocrit <= 50.0")
+                print("Hematocrit >= 38.8 and Hematocrit <= 50.0 and server replies with (You are in the normal range!)")
                 con.send(bytes("You are in the normal range!", "UTF-8"))
                 con.close()
             if value < 38.8:
-                print("Hematocrit < 38.8")
-                con.send(bytes("Low Hematocrit value!", "UTF-8"))
-                con.close()
+                print("Hematocrit < 38.8 and server will check the value")
+                if value <= 0.0:
+                    print("Hematocrit value is not correct!")
+                    con.send(bytes("Hematocrit value is not correct! please re-enter it", "UTF-8"))
+                    con.close()
+                else:
+                    con.send(bytes("Low Hematocrit value!", "UTF-8"))
+                    con.close()
             if value > 50.0:
                 print("Hematocrit > 50.0")
                 con.send(bytes("High Hematocrit value!", "UTF-8"))
@@ -80,13 +102,18 @@ while True:
         # Platelets
         if test == 'Platelets':
             if value >= 150.0 and value <= 450.0:
-                print("Platelets >= 150.0 and Platelets <= 450.0")
+                print("Platelets >= 150.0 and Platelets <= 450.0 and server replies with (You are in the normal range!)")
                 con.send(bytes("You are in the normal range!", "UTF-8"))
                 con.close()
             if value < 150.0:
-                print("Platelets < 150.0")
-                con.send(bytes("Low Platelets value!", "UTF-8"))
-                con.close()
+                print("Platelets < 150.0 and server will check the value")
+                if value <= 0.0:
+                    print("Platelets value is not correct!")
+                    con.send(bytes("Platelets value is not correct! please re-enter it", "UTF-8"))
+                    con.close()
+                else:
+                    con.send(bytes("Low Platelets value!", "UTF-8"))
+                    con.close()
             if value > 450.0:
                 print("Platelets > 450.0")
                 con.send(bytes("High Platelets value!", "UTF-8"))
