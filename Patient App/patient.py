@@ -1,8 +1,8 @@
 # Importing libraries and files
 from PyQt5 import QtWidgets, QtGui
-from PyQt5.QtWidgets import QFileDialog, QApplication, QMessageBox, QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidgetItem
 from main import Ui_MainWindow
-import os, sys, qdarkstyle, mysql.connector, socket
+import sys, qdarkstyle, mysql.connector, socket
 from time import sleep
 
 # Connect to database
@@ -17,7 +17,9 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.tabWidget.setVisible(False)
         self.ui.tabWidget_2.setVisible(False)
+        self.ui.feedback_btn.setEnabled(False)
         self.ui.login_btn.clicked.connect(self.Handel_login)
+        self.ui.record_enter.textChanged.connect(self.unlock_button)
         self.ui.feedback_btn.clicked.connect(self.client_program)
         self.ui.category_combo0.currentTextChanged.connect(self.show_test_info)
 
@@ -47,7 +49,7 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         cur.execute(''' SELECT RBC, WBC, Hgb, Hematocrit, Platelets FROM records FULL JOIN patients ON p_id = %s order by p_id desc limit 1 ''' 
                                     % (patient))
         data = cur.fetchall()
-        normal_ranges = [('4 - 5.2', '4 - 11', '12 - 16', '38.8 - 50', '150 - 450')]
+        normal_ranges = [('Normal (4 - 5.2)', 'Normal (4 - 11)', 'Normal (12 - 16)', 'Normal (38.8 - 50)', 'Normal (150 - 450)')]
         if data:
             self.ui.records_table.setRowCount(0)
             self.ui.records_table.insertRow(0)
@@ -67,11 +69,12 @@ class ApplicationWindow(QtWidgets.QMainWindow):
                 row_position = self.ui.records_table.rowCount()
                 self.ui.records_table.insertRow(row_position)
     def show_records_combobox(self):
-        data = ['RBC', 'WBC', 'Hgb', 'Hematocrit', 'Platelets']
-        # print(data)
+        self.ui.category_combo0.clear()
+        data = ['Select Test', 'RBC', 'WBC', 'Hgb', 'Hematocrit', 'Platelets']
         for category in data:
             self.ui.category_combo0.addItem(category)
 
+    # Test information
     def show_test_info(self):
         self.ui.Test_2.setEnabled(True)
         self.ui.Feedback_2.setEnabled(True)
@@ -103,45 +106,55 @@ class ApplicationWindow(QtWidgets.QMainWindow):
             self.ui.Feedback_2.setEnabled(False)
             self.ui.Treatment.setEnabled(False)
 
+    # Unlock button
+    def unlock_button(self):
+        if self.ui.record_enter.text() == '':
+            self.ui.feedback_btn.setEnabled(False)
+        else:
+            self.ui.feedback_btn.setEnabled(True)
+
     # Socket Connection
     def client_program(self):
-        # self.connect()
-        # configure socket and connect to server  
-        clientSocket = socket.socket()  
-        host = socket.gethostname()  
-        port = 25000  
-        clientSocket.connect((host, port))
-        self.statusBar().showMessage('Connection is established successfully')        
-        # keep track of connection status  
-        connected = True
-        data = self.ui.record_enter.text()  # take input
-        
-        while True:
-            # attempt to send and receive wave, otherwise reconnect  
-            try:
-                clientSocket.send(bytes(self.ui.category_combo0.currentText() + ' ' + data, "UTF-8"))
-                message = clientSocket.recv(1024).decode("UTF-8")
-                print(message)
-                break
-            except socket.error:  
-                # set connection status and recreate socket  
-                connected = False  
-                clientSocket = socket.socket()  
-                print( "connection lost... reconnecting" )  
-                while not connected:  
-                    # attempt to reconnect, otherwise sleep for 2 seconds  
-                    try:  
-                        clientSocket.connect((host, port))
-                        connected = True  
-                        print( "re-connection successful" )  
-                    except socket.error:  
-                        sleep( 2 )
+        try:
+            # configure socket and connect to server  
+            clientSocket = socket.socket()  
+            host = socket.gethostname()  
+            port = 25000  
+            clientSocket.connect((host, port))
+            self.statusBar().showMessage('Connection is established successfully!')
+            # keep track of connection status  
+            connected = True
+            data = self.ui.record_enter.text()  # take input
+            
+            while True:
+                # attempt to send and receive wave, otherwise reconnect  
+                try:
+                    clientSocket.send(bytes(self.ui.category_combo0.currentText() + ' ' + data, "UTF-8"))
+                    message = clientSocket.recv(1024).decode("UTF-8")
+                    print(message)
+                    break
+                except socket.error:  
+                    # set connection status and recreate socket  
+                    connected = False  
+                    clientSocket = socket.socket()  
+                    print( "connection lost... reconnecting" )  
+                    while not connected:  
+                        # attempt to reconnect, otherwise sleep for 2 seconds  
+                        try:  
+                            clientSocket.connect((host, port))
+                            connected = True  
+                            print( "re-connection successful" )  
+                        except socket.error:  
+                            sleep( 2 )
 
-        self.ui.record_enter.setText('')
-        self.ui.result.setText('Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + message)
-        self.suggest_treatment(self.ui.result.toPlainText())
-        clientSocket.close()
+            self.ui.record_enter.setText('')
+            self.ui.result.setText('Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + message)
+            self.suggest_treatment(self.ui.result.toPlainText())
+            clientSocket.close()
+        except:
+            self.statusBar().showMessage('Server has an unexpected error!')
 
+    # Sugest a treatment to patient according to his result
     def suggest_treatment(self, treatment):
         # For all
         if treatment == 'Feedback for ' + self.ui.category_combo0.currentText() + ' Test is: ' + 'You are in the normal range!':

@@ -14,9 +14,8 @@ while True:
 
     # receive from client  
     message = con.recv(1024).decode("UTF-8")
-    result = message.split()
-    test = result[0]
-    value = float(result[1])
+    test = message.split()[0]
+    value = float(message.split()[1])
     print(message)
 
     # attempt to send and receive wave, otherwise reconnect  
@@ -70,14 +69,15 @@ while True:
             if value < 12.0:
                 print("Hgb < 12.0 and server will check the value")
                 if value <= 0.0:
-                    print("Hgb value is not correct!")
+                    print("Hgb value is zero or below and is not correct! So, server replies with (Hgb value is not correct! please re-enter it)")
                     con.send(bytes("Hgb value is not correct! please re-enter it", "UTF-8"))
                     con.close()
                 else:
+                    print("Hgb value is neither zero nor below but still below 12.0. So, server replies with (Low Hgb value!)")
                     con.send(bytes("Low Hgb value!", "UTF-8"))
                     con.close()
             if value > 16.0:
-                print("Hgb > 16.0")
+                print("Hgb > 16.0 and server replies with (High Hgb value!)")
                 con.send(bytes("High Hgb value!", "UTF-8"))
                 con.close()
         # Hematocrit
@@ -89,14 +89,15 @@ while True:
             if value < 38.8:
                 print("Hematocrit < 38.8 and server will check the value")
                 if value <= 0.0:
-                    print("Hematocrit value is not correct!")
+                    print("Hematocrit value is zero or below and is not correct! So, server replies with (Hematocrit value is not correct! please re-enter it)")
                     con.send(bytes("Hematocrit value is not correct! please re-enter it", "UTF-8"))
                     con.close()
                 else:
+                    print("Hematocrit value is neither zero nor below but still below 12.0. So, server replies with (Low Hematocrit value!)")
                     con.send(bytes("Low Hematocrit value!", "UTF-8"))
                     con.close()
             if value > 50.0:
-                print("Hematocrit > 50.0")
+                print("Hematocrit > 50.0 and server replies with (High Hematocrit value!)")
                 con.send(bytes("High Hematocrit value!", "UTF-8"))
                 con.close()
         # Platelets
@@ -108,14 +109,15 @@ while True:
             if value < 150.0:
                 print("Platelets < 150.0 and server will check the value")
                 if value <= 0.0:
-                    print("Platelets value is not correct!")
+                    print("Platelets value is zero or below and is not correct! So, server replies with (Platelets value is not correct! please re-enter it)")
                     con.send(bytes("Platelets value is not correct! please re-enter it", "UTF-8"))
                     con.close()
                 else:
+                    print("Platelets value is neither zero nor below but still below 12.0. So, server replies with (Low Platelets value!)")
                     con.send(bytes("Low Platelets value!", "UTF-8"))
                     con.close()
             if value > 450.0:
-                print("Platelets > 450.0")
+                print("Platelets > 450.0 and server replies with (High Platelets value!)")
                 con.send(bytes("High Platelets value!", "UTF-8"))
                 con.close()
     except:
