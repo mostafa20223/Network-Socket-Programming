@@ -41,17 +41,15 @@ Nancy Salah Eldin | 2 | 37
 
 <h3 id="F"> Output and Indication </h3>
 
-> ***For Client Side*** <br>
-![Login Page]() <br>
-![]() <br>
-![]() <br>
-![]() <br>
-![]() <br>
+> ***For Client Side (Patient)***
+
+Login | Handle Login | Success Login
+:--------:|:----------:|:------------:
+![Login Page](https://github.com/mostafa20223/Network-Socket-Programming/blob/main/Results/login.PNG) | ![Handle Login](https://github.com/mostafa20223/Network-Socket-Programming/blob/main/Results/handle_login.PNG) | ![Success Login](https://github.com/mostafa20223/Network-Socket-Programming/blob/main/Results/success_login.PNG)
 
 > ***For Server Side*** <br>
-![Establish Server]() <br>
-![]() <br>
-![]() <br>
+
+![Establish Server](https://github.com/mostafa20223/Network-Socket-Programming/blob/main/Results/server.png)
 
 <h1 id="G"> Video Link </h1>
 
