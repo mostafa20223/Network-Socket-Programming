@@ -7,7 +7,8 @@
 * <a href="#D"> Tools and Output </a>
   * <a href="#E"> Tools Used for </a>
   * <a href="#F"> Output and Indication </a>
-* <a href="#G"> Source Code and Apps </a>
+* <a href="#G"> Video Link </a>
+* <a href="#H"> Source Code and Apps </a>
 
 <h1 id="A"> Team Information </h1>
 
@@ -52,7 +53,11 @@ Nancy Salah Eldin | 2 | 37
 ![]() <br>
 ![]() <br>
 
-<h1 id="G"> Source Code and Apps </h1>
+<h1 id="G"> Video Link </h1>
+
+[Video (Dropbox)](https://www.dropbox.com/sh/87h3ymvx58iuwdc/AABsHxEDmhC7e4C2StB8G0Dqa?dl=0)
+
+<h1 id="H"> Source Code and Apps </h1>
 
 Doctor App | Patient App
 :--------------:|:--------------:
